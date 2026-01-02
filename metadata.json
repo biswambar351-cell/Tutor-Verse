@@ -1,0 +1,8 @@
+{
+  "name": "Tutor verse",
+  "description": "An interactive AI tutor featuring real-time voice interaction, 2-month neural memory, and dynamic scientific simulations.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
