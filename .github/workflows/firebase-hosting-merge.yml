@@ -2,16 +2,21 @@ name: Deploy to Firebase Hosting on merge
 on:
   push:
     branches:
-      - main
+      - main  # Set this to master if that is your branch name
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      
+      # The build step creates your 'dist' or 'build' folder
+      - name: Install and Build
+        run: npm ci && npm run build 
+
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TUTOR_VERSE }}
           channelId: live
-          projectId: tutor-verse
+          projectId: tutor-verse-5377b  # <--- YOUR CORRECT PROJECT ID
