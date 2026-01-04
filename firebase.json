@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",  // Change to "build" if not using Vite
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
